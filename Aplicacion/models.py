@@ -1,6 +1,6 @@
 from django.db import models
 
-class Post (models.Model):
+class Post(models.Model):
     nombre_del_curso = models.CharField(max_length=30)
     descripcion_del_curso = models.CharField(max_length=80)
     numero_del_curso = models.CharField(max_length=15)

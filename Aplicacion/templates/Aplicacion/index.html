@@ -6,27 +6,6 @@
   
     <div class="container marketing">
   
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-  
-      
-        <div class="col-lg-4">
-          <img src="./curso_coder_house_files/puente-corrientes-resistencia.jpeg" height="144" width="144">
-          <h2>El puente</h2>
-          <p>vistas lindas del rio</p>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-      
-        <div class="col-lg-4">
-          <img src="./curso_coder_house_files/cataratas-del-iguazu-misiones.jpeg" height="144" width="144">
-          <h2>Las cataratas</h2>
-          <p>un destino imperdible</p>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        
-      </div><!-- /.row -->
-  
-  
       <!-- START THE FEATURETTES -->
   
       
@@ -34,12 +13,12 @@
   
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">El puente</h2>
-          <p class="lead">vistas lindas del rio</p>
+          <h2 class="featurette-heading">Cursos Completos</h2>
+          <p class="lead">Acá vas a poder agregar y ver todos los cursos del centro.</p>
         </div>
         <div class="col-md-5 order-md-1">
           
-            <img src="./curso_coder_house_files/puente-corrientes-resistencia.jpeg" height="400" width="400">
+            <a href="{% url 'admin-cursos' %}"><img src="../../static/Aplicacion/assets/cursos.jpg" height="400" width="500"></a>
           
   
         </div>
@@ -50,12 +29,27 @@
   
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Las cataratas</h2>
-          <p class="lead">un destino imperdible</p>
+          <h2 class="featurette-heading">Profesores</h2>
+          <p class="lead">Acá podes agregar y ver a todos los profesores de nuestra institución</p>
         </div>
         <div class="col-md-5 order-md-1">
           
-            <img src="./curso_coder_house_files/cataratas-del-iguazu-misiones.jpeg" height="400" width="400">
+          <a href="{% url 'profesores' %}"><img src="../../static/Aplicacion/assets/profersores.jpg" height="400" width="500"></a>
+          
+  
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+  
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Alumnos</h2>
+          <p class="lead">Acá vas a poder ver a todos los Alumnos de nuestra escuela y agregar a los que hagan falta</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          
+          <a href="{% url 'alumnos' %}"><img src="../../static/Aplicacion/assets/alumnos.jpg" height="400" width="500"></a>
           
   
         </div>

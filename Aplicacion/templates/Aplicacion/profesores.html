@@ -6,7 +6,8 @@
 
 <h1>Administracion de Profesores: </h1>
 
-<form action="" method="post">
+<form action="{% url 'agregar-profesor' %}" method="post">
+    {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Agregar">
 
@@ -15,8 +16,7 @@
 <ul>
     {% for profesor in profesores %}
     <li>
-        {{ profesor.id }} - {{ profesor.nombre_del_profesor }} {{ profesor.apellido_del_profesor }} - {{
-        profesor.numero_de_profesor }}
+        {{ profesor.id }} - {{profesor.nombre_del_profesor}} {{profesor.apellido_del_profesor}} - {{profesor.numero_de_profesor}}
     </li>
     {% endfor %}
 </ul>
