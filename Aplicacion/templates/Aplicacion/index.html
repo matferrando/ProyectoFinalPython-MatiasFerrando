@@ -1,15 +1,79 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola Capo</h1>
-    <p>
-        Hola {{nombre}} {{apellido}}, como andas?
-    </p>
-</body>
-</html>
+{% extends "Aplicacion/base.html" %}
+{% load static %}
+
+{% block main %}
+<main>
+  
+    <div class="container marketing">
+  
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+  
+      
+        <div class="col-lg-4">
+          <img src="./curso_coder_house_files/puente-corrientes-resistencia.jpeg" height="144" width="144">
+          <h2>El puente</h2>
+          <p>vistas lindas del rio</p>
+          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      
+        <div class="col-lg-4">
+          <img src="./curso_coder_house_files/cataratas-del-iguazu-misiones.jpeg" height="144" width="144">
+          <h2>Las cataratas</h2>
+          <p>un destino imperdible</p>
+          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        
+      </div><!-- /.row -->
+  
+  
+      <!-- START THE FEATURETTES -->
+  
+      
+      <hr class="featurette-divider">
+  
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">El puente</h2>
+          <p class="lead">vistas lindas del rio</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          
+            <img src="./curso_coder_house_files/puente-corrientes-resistencia.jpeg" height="400" width="400">
+          
+  
+        </div>
+      </div>
+  
+      
+      <hr class="featurette-divider">
+  
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Las cataratas</h2>
+          <p class="lead">un destino imperdible</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          
+            <img src="./curso_coder_house_files/cataratas-del-iguazu-misiones.jpeg" height="400" width="400">
+          
+  
+        </div>
+      </div>
+  
+      
+  
+  
+      <!-- /END THE FEATURETTES -->INDEX.
+  
+    </div><!-- /.container -->
+  
+  
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-end"><a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Back to top</a></p>
+      <p>© 2017–2021 Company, Inc. · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Terms</a></p>
+    </footer>
+</main>
+
+{% endblock %}
