@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from Aplicacion.models import Post, Alumno, Profesor
 from Aplicacion.forms import PostForm, AlumnoForm, ProfesorForm
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 def index(request):
     return render(request, "Aplicacion/index.html")
@@ -62,3 +63,12 @@ def buscar_curso(request):
         "posts": Post.objects.filter(nombre_del_curso__icontains=criterio).all(),
     }
     return render(request, "Aplicacion/admin_cursos.html", context)
+
+
+class PostList(ListView):
+    model = Post
+    context_object_name = "posts"
+
+class PostDetail(DetailView):
+    model = Post
+    context_object_name = "post"

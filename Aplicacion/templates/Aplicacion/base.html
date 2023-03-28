@@ -69,6 +69,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'admin-cursos' %}">Cursos</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post-list' %}">Mis Cursos</a>
+          </li>
         </ul>
         <form  action="{% url 'buscar-curso' %}" class="d-flex">
           <input class="form-control me-2" type="search" name="criterio" placeholder="Curso por Nombre" aria-label="Search">

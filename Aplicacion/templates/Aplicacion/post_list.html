@@ -1,0 +1,21 @@
+{% extends "Aplicacion/base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<ul>
+    {% for post in object_list %}
+   
+    <li> 
+        {{post.id}} - {{post.nombre_del_curso}} - {{post.descripcion_del_curso}} 
+        <a href="">Detalle</a>
+        <a href="">Actualizar</a>
+        <a href="">Borrar</a>
+
+    </li>
+    
+    {% endfor %}
+</ul>
+
+{% endblock %}
