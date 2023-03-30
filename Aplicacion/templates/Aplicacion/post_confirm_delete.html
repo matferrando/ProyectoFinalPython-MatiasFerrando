@@ -1,0 +1,22 @@
+{% extends "Aplicacion/base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<p>Estas por borrar el curso "{{ object.nombre_del_curso }}" de manera permanente. Desea continuar?</p>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input class="btn btn-danger" type="submit" value="Borrar">
+    <a class="btn btn-primary" href="{% url 'post-list' %}">Cancelar</a>
+</form> 
+
+
+ 
+
+
+
+
+
+{% endblock %}

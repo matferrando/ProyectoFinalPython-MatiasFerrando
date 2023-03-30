@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Aplicacion.views import index, mostrar_profesores, mostrar_curso, mostrar_alumnos, agregar_alumno, agregar_curso, agregar_profesor, buscar_curso, PostList
+from Aplicacion.views import index, mostrar_profesores, mostrar_curso, mostrar_alumnos, agregar_alumno, agregar_curso, agregar_profesor, buscar_curso, PostList, PostDetail, PostUpdate, PostDelete, PostCreate, PostSearch
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +28,10 @@ urlpatterns = [
     path("alumnos/agregar", agregar_alumno, name="agregar-alumno"),
     path("admin-cursos/buscar_curso", buscar_curso, name="buscar-curso"),
     path("post/list", PostList.as_view(), name="post-list"),
+    path("post/<pk>/detail", PostDetail.as_view(), name="post-detail"),
+    path("post/<pk>/update", PostUpdate.as_view(), name="post-update"),
+    path("post/<pk>/delete", PostDelete.as_view(), name="post-delete"),
+    path("post/create", PostCreate.as_view(), name="post-create"),
+    path("post/search", PostSearch.as_view(), name="post-search"),
 ]
  

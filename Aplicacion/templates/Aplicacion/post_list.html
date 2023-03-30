@@ -8,10 +8,10 @@
     {% for post in object_list %}
    
     <li> 
-        {{post.id}} - {{post.nombre_del_curso}} - {{post.descripcion_del_curso}} 
-        <a href="">Detalle</a>
-        <a href="">Actualizar</a>
-        <a href="">Borrar</a>
+        {{post.id}} - {{post.nombre_del_curso}}
+        <a class="btn btn-primary" href="{% url 'post-detail' post.id %}">Detalle</a>
+        <a href="{% url 'post-update' post.id %}">Actualizar</a>
+        <a href="{% url 'post-delete' post.id %}">Borrar</a>
 
     </li>
     

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from Aplicacion.models import Post, Alumno, Profesor
 from Aplicacion.forms import PostForm, AlumnoForm, ProfesorForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 def index(request):
     return render(request, "Aplicacion/index.html")
@@ -72,3 +73,28 @@ class PostList(ListView):
 class PostDetail(DetailView):
     model = Post
     context_object_name = "post"
+
+class PostUpdate(UpdateView):
+    model = Post
+    success_url = reverse_lazy("post-list")
+    fields = "__all__"
+
+class PostDelete(DeleteView):
+    model = Post
+    context_object_name = "post"
+    success_url = reverse_lazy("post-list")
+
+class PostCreate(CreateView):
+    model = Post
+    success_url = reverse_lazy("post-list")
+    fields = "__all__"
+
+class PostSearch(ListView):
+    model = Post
+    context_object_name = "posts"
+
+    def get_queryset(self):
+        criterio = self.request.GET.get("criterio")
+        result = Post.objects.filter(nombre_del_curso__icontains=criterio).all()
+        return result
+    
