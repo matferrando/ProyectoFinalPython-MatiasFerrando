@@ -7,7 +7,7 @@
 
 {% if form %}
 <h1>Administracion de Cursos:</h1>
-<form action="{% url 'agregar-curso' %}" method="post">
+<form action="{% url 'post-create' %}" method="post">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Agregar">

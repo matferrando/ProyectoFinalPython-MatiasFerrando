@@ -10,12 +10,17 @@
     <li> 
         {{post.id}} - {{post.nombre_del_curso}}
         <a class="btn btn-primary" href="{% url 'post-detail' post.id %}">Detalle</a>
-        <a href="{% url 'post-update' post.id %}">Actualizar</a>
-        <a href="{% url 'post-delete' post.id %}">Borrar</a>
+        
+        {% if user.is_authenticated and user.id == post.publisher.id %}
+
+            <a href="{% url 'post-update' post.id %}">Actualizar</a>
+            <a href="{% url 'post-delete' post.id %}">Borrar</a>
+
+        {% endif %}
 
     </li>
     
     {% endfor %}
 </ul>
 
-{% endblock %}
+{% endblock %}    

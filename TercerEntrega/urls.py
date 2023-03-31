@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Aplicacion.views import index, mostrar_profesores, mostrar_curso, mostrar_alumnos, agregar_alumno, agregar_curso, agregar_profesor, buscar_curso, PostList, PostDetail, PostUpdate, PostDelete, PostCreate, PostSearch
+from Aplicacion.views import index, mostrar_profesores, mostrar_curso, mostrar_alumnos, agregar_alumno, agregar_curso, agregar_profesor, buscar_curso, PostList, PostDetail, PostUpdate, PostDelete, PostCreate, PostSearch, Login, SignUp, Logout, PostMineList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,5 +33,9 @@ urlpatterns = [
     path("post/<pk>/delete", PostDelete.as_view(), name="post-delete"),
     path("post/create", PostCreate.as_view(), name="post-create"),
     path("post/search", PostSearch.as_view(), name="post-search"),
+    path("login/", Login.as_view(), name="login"),
+    path("signup/", SignUp.as_view(), name="signup"),
+    path("logout/", Logout.as_view(), name="logout"),
+    path("post/list/mine", PostMineList.as_view(), name="post-mine"),
 ]
- 
+  
