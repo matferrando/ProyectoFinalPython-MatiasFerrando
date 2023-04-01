@@ -63,6 +63,12 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'post-list' %}">Todos los Cursos</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post-list' %}">Mensajes</a>
+          </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'profesores' %}">Profesores</a>
@@ -76,12 +82,24 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'post-mine' %}">Mis Cursos</a>
           </li>
+          {% if user.profile %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile-update' user.profile.id %}">Actualizar Perfil</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile-create' %}">Crear Perfil</a>
+          </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Salir | {{ user.username }}</a>
           </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Registrarse</a>
           </li>
           {% endif %}
         </ul>

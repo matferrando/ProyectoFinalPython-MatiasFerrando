@@ -14,6 +14,11 @@
 </form>
 
 <ul>
+  {% if not alumnos %}
+  <h2>Todavia no hay alumnos disponibles</h2>
+  {% endif %}
+
+
     {% for alumno in alumnos %}
     <li>{{ alumno.id }} - {{alumno.nombre_del_alumno }} {{alumno.apellido_del_alumno }} - {{alumno.numero_de_alumno }}</li>
   {% endfor %}

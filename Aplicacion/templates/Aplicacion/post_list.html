@@ -5,6 +5,11 @@
 {% block main %}
 
 <ul>
+    {% if not posts %}
+    <h2>Todavia no hay cursos disponibles</h2>
+    {% endif %}
+
+
     {% for post in object_list %}
    
     <li> 

@@ -14,6 +14,10 @@
 </form>
 
 <ul>
+    {% if not profesores %}
+    <h2>Todavia no hay profesores disponibles</h2>
+    {% endif %}
+
     {% for profesor in profesores %}
     <li>
         {{ profesor.id }} - {{profesor.nombre_del_profesor}} {{profesor.apellido_del_profesor}} - {{profesor.numero_de_profesor}}

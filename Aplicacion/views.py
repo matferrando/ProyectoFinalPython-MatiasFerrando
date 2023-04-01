@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Aplicacion.models import Post, Alumno, Profesor
+from Aplicacion.models import Post, Alumno, Profesor, Profile
 from Aplicacion.forms import PostForm, AlumnoForm, ProfesorForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -9,6 +9,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 def index(request):
     return render(request, "Aplicacion/index.html")
+
+def about(request):
+    return render(request, "Aplicacion/about.html")
+
+def mensajes(request):
+    return render(request, "Aplicacion/mensajes.html")
 
 def mostrar_profesores(request):
     context = {
@@ -124,3 +130,21 @@ class SignUp(CreateView):
 
 class Logout(LogoutView):
     template_name = "registration/logout.html"
+
+class ProfileCreate(CreateView):
+    model = Profile
+    success_url = reverse_lazy("index")
+    fields = ["avatar", "especialidad"]
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    
+class ProfileUpdate(UserPassesTestMixin, UpdateView):
+    model = Profile
+    success_url = reverse_lazy("index")
+    fields = ["avatar", "especialidad"]
+
+    def test_func(self):
+        return Profile.objects.filter(user=self.request.user).exists()
+    
