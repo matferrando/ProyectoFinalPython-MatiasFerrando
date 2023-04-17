@@ -36,3 +36,9 @@ class Alumno(models.Model):
 
     def __str__(self):
         return f"{self.numero_de_alumno} - {self.nombre_del_alumno} {self.apellido_del_alumno}"
+
+class Mensaje(models.Model):
+    mensaje = models.TextField(max_length=1000)
+    email = models.EmailField()
+    destinatario = models.ForeignKey(User, on_delete=models.CASCADE, related_name="mensajes")
+    

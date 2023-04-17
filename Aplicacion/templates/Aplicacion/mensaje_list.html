@@ -1,0 +1,25 @@
+{% extends "Aplicacion/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<h1> Mensajería </h1>
+
+<ul>
+    {% if not mensajes %}
+    <h2>Todavia no hay mensajes disponibles</h2>
+    {% endif %}
+
+
+    {% for mensaje in mensajes %}
+    <li>
+        {{mensaje.mensaje}}
+        <br>
+        Usuario: {{mensaje.email}}
+        <br>
+        <a href="{% url 'mensaje-delete' mensaje.id %}">Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}   
